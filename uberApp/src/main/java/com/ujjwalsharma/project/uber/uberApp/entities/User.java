@@ -1,15 +1,24 @@
 package com.ujjwalsharma.project.uber.uberApp.entities;
 
+
 import com.ujjwalsharma.project.uber.uberApp.entities.enums.Role;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+
 import java.util.Set;
 
+
 @Entity
-@Table(name="app-user")
+@Table(name = "app_user")
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @Column(unique = true)
